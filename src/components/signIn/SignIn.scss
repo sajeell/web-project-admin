@@ -1,0 +1,127 @@
+$form-background-color: #d0ddfb;
+$form-box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.12);
+$light-color: #f2f6ff;
+$dark-color: #405e87;
+
+.signin-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $form-background-color;
+  height: 100vh;
+
+  a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .signin-bg-image {
+    img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+  }
+
+  .signin-form {
+    z-index: 100;
+    position: absolute;
+    background-color: $light-color;
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    box-shadow: $form-box-shadow;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .signin-row-1 {
+        margin-left: -240px;
+        margin-top: 15px;
+        span {
+          font-weight: bold;
+          font-size: 16px;
+          color: $dark-color;
+        }
+      }
+
+      .signin-row-2 {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        input {
+          padding: 10px;
+          width: 200px;
+          border: 1px solid $light-color;
+          color: $dark-color;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: $dark-color;
+          }
+        }
+      }
+
+      .signin-row-3 {
+        input {
+          padding: 10px;
+          width: 200px;
+          border: 1px solid $light-color;
+          color: $dark-color;
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: $dark-color;
+          }
+        }
+      }
+
+      .signin-row-4 {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        input {
+          cursor: pointer;
+          background-color: $dark-color;
+          border: 1px solid $dark-color;
+          max-height: 100%;
+          max-width: 100%;
+          padding: 10px;
+          width: 221.99px;
+          color: white;
+
+          &:hover {
+            color: #267fff;
+            border: 1px solid $dark-color;
+            background-color: $light-color;
+          }
+
+          &:active {
+            color: $light-color;
+            border: 1px solid $dark-color;
+            background-color: $dark-color;
+          }
+        }
+      }
+
+      .signin-row-5 {
+        display: flex;
+        color: $dark-color;
+        font-size: 12px;
+        .signin-row-5-item {
+          &:nth-child(2) {
+            cursor: pointer;
+            margin-left: 2px;
+            margin-right: 2px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
