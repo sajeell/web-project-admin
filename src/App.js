@@ -10,6 +10,8 @@ import {
 // These imports load individual services into the firebase namespace.
 import 'firebase/auth';
 import SignIn from './components/signIn/SignIn';
+import Header from './components/header/Header';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
   const firebaseConfig = {
@@ -33,13 +35,14 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route path="/signin">
+            <Route path="/">
               <FirebaseAuthConsumer>
                 {({ isSignedIn }) => {
                   if (isSignedIn === true) {
                     return (
                       <div>
-                        <h3>Signed in</h3>
+                        <Header />
+                        <Dashboard />
                       </div>
                     )
                   } else {
