@@ -16,7 +16,7 @@ export default function SignIn() {
 
   const signIn = (e) => {
     e.preventDefault()
-    if (email === "admin@admin.com") {
+    if (email === 'admin@admin.com') {
       firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
@@ -29,64 +29,64 @@ export default function SignIn() {
           alert(error.message)
         })
     } else {
-      alert("Email is not associated with any admin")
+      alert('Email is not associated with any admin')
     }
   }
 
   return (
-    <div className='signin-wrapper'>
-      <div className='signin-bg-image'>
-        <img src={FormBG} alt='Form background' />
+    <div className="signin-wrapper">
+      <div className="signin-bg-image">
+        <img src={FormBG} alt="Form background" />
       </div>
-      <div className='signin-form'>
+      <div className="signin-form">
         <form>
-          <div className='signin-row-1'>
+          <div className="signin-row-1">
             <span>Sign In</span>
           </div>
-          <div className='signin-row-2'>
+          <div className="signin-row-2">
             <input
-              type='email'
-              name='email'
-              id='email'
+              type="email"
+              name="email"
+              id="email"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value)
               }}
-              placeholder='Email Address'
+              placeholder="Email Address"
             />
           </div>
-          <div className='signin-row-3'>
+          <div className="signin-row-3">
             <input
-              type='password'
-              name='password'
-              id='password'
+              type="password"
+              name="password"
+              id="password"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value)
               }}
-              placeholder='Password'
+              placeholder="Password"
             />
           </div>
 
-          <div className='signin-row-4'>
+          <div className="signin-row-4">
             <input
-              type='submit'
-              name='submit-btn'
-              id='submit-btn'
-              value='Sign In'
+              type="submit"
+              name="submit-btn"
+              id="submit-btn"
+              value="Sign In"
               onClick={signIn}
             />
           </div>
 
-          <div className='signin-row-5'>
-            <span className='signin-row-5-item'>
+          <div className="signin-row-5">
+            <span className="signin-row-5-item">
               Don't have an account yet?
             </span>
 
-            <span className='signin-row-5-item'>
-              <Link to='/signup'>Sign Up</Link>
+            <span className="signin-row-5-item">
+              <Link to="/signup">Sign Up</Link>
             </span>
-            <span className='signin-row-5-item'>here</span>
+            <span className="signin-row-5-item">here</span>
           </div>
         </form>
       </div>
