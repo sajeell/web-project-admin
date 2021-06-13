@@ -1,6 +1,19 @@
+import { useState } from 'react'
 import './Dashboard.scss'
 
 export default function Dashboard() {
+  const [numOfQuestions, setNumOfQuestions] = useState(0)
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(1)
+  const [cost, setCost] = useState(0)
+
+  const questionNumber = []
+
+
+  for (let i = 1; i < numOfQuestions; i++) {
+    questionNumber.push(i)
+  }
+
+
   return (
     <div className="dashboard-wrapper">
       <div className="breadcrumb">
@@ -39,6 +52,13 @@ export default function Dashboard() {
                 name="cost"
                 id="cost"
                 placeholder="e.g. 450"
+                value={cost}
+                onChange={(e) => {
+                  if (e.target.value < 0) {
+                    return
+                  }
+                  setCost(e.target.value)
+                }}
               />
             </div>
           </div>
@@ -87,14 +107,159 @@ export default function Dashboard() {
             </div>
             <div className="add-exam-row-right">
               <input
-                type="text"
+                type="number"
                 name="numOfQuestions"
                 id="numOfQuestions"
                 placeholder="e.g. 4"
+                value={numOfQuestions}
+                onChange={(e) => {
+                  if (e.target.value < 0) {
+                    return
+                  }
+                  setNumOfQuestions(e.target.value)
+                }}
               />
             </div>
           </div>
         </div>
+        {numOfQuestions == 0 ? <div>
+          <h4>No Questions to be linked</h4>
+        </div> :
+          <div>
+            <div className="dashboard-exams-heading">
+              <span>Link Questions</span>
+            </div>
+            <div className="link-question">
+              <div className="add-question-row">
+                <div className="add-question-row-left">
+                  <span>Question {currentQuestionIndex}:</span>
+                </div>
+                <div className="add-question-row-right">
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="e.g. What is a hook?"
+                  />
+                </div>
+              </div>
+              <div className="add-choice-row">
+                <div className="add-choice-row-left">
+                  <span>Choice 1:</span>
+                </div>
+                <div className="add-choice-row-middle">
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="e.g. What is a hook?"
+                  />
+                </div>
+                <div className="add-choice-row-right">
+                  <div className="add-choice-row-right-row">
+                    <input
+                      type="radio"
+                      id="choice"
+                      name="choice"
+                    ></input>
+                  </div>
+                  <div className="add-choice-row-right-row">
+                    <span>Correct</span>
+                  </div>
+                </div>
+              </div>
+              <div className="add-choice-row">
+                <div className="add-choice-row-left">
+                  <span>Choice 2:</span>
+                </div>
+                <div className="add-choice-row-middle">
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="e.g. What is a hook?"
+                  />
+                </div>
+                <div className="add-choice-row-right">
+                  <div className="add-choice-row-right-row">
+                    <input
+                      type="radio"
+                      id="choice"
+                      name="choice"
+                    ></input>
+                  </div>
+                  <div className="add-choice-row-right-row">
+                    <span>Correct</span>
+                  </div>
+                </div>
+              </div>
+              <div className="add-choice-row">
+                <div className="add-choice-row-left">
+                  <span>Choice 3:</span>
+                </div>
+                <div className="add-choice-row-middle">
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="e.g. What is a hook?"
+                  />
+                </div>
+                <div className="add-choice-row-right">
+                  <div className="add-choice-row-right-row">
+                    <input
+                      type="radio"
+                      id="choice"
+                      name="choice"
+                    ></input>
+                  </div>
+                  <div className="add-choice-row-right-row">
+                    <span>Correct</span>
+                  </div>
+                </div>
+              </div>
+              <div className="add-choice-row">
+                <div className="add-choice-row-left">
+                  <span>Choice 4:</span>
+                </div>
+                <div className="add-choice-row-middle">
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="e.g. What is a hook?"
+                  />
+                </div>
+                <div className="add-choice-row-right">
+                  <div className="add-choice-row-right-row">
+                    <input
+                      type="radio"
+                      id="choice"
+                      name="choice"
+                    ></input>
+                  </div>
+                  <div className="add-choice-row-right-row">
+                    <span>Correct</span>
+                  </div>
+                </div>
+              </div>
+              <div className="add-choice-row">
+                <input
+                  type="submit"
+                  name="submit-btn"
+                  id="submit-btn"
+                  value={numOfQuestions - 1 === currentQuestionIndex - 1 ? "Submit" : "Next Question"}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (currentQuestionIndex <= numOfQuestions - 1) {
+                      setCurrentQuestionIndex(currentQuestionIndex + 1)
+                    }
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        }
       </div>
     </div>
   )

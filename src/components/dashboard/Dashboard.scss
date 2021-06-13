@@ -1,6 +1,21 @@
 $light-color: #f2f6ff;
 $dark-color: #405e87;
 
+@mixin inputField {
+  padding: 9px;
+  width: 250px;
+  border: 1px solid $dark-color;
+  color: $dark-color;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $dark-color;
+  }
+}
+
 .dashboard-wrapper {
   color: $dark-color;
   display: flex;
@@ -74,6 +89,105 @@ $dark-color: #405e87;
             input {
               width: 300px;
               height: 100px !important;
+            }
+          }
+        }
+      }
+    }
+
+    .link-question {
+      display: flex;
+      flex-direction: column;
+      .add-question-row {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        .add-question-row-left {
+          span {
+            font-size: 14px;
+            margin-right: 10px;
+          }
+        }
+        .add-question-row-right {
+          input {
+            padding: 9px;
+            width: 250px;
+            border: 1px solid $dark-color;
+            color: $dark-color;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::placeholder {
+              color: $dark-color;
+            }
+          }
+        }
+      }
+      .add-choice-row {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        .add-choice-row-left {
+          span {
+            font-size: 14px;
+            margin-right: 10px;
+          }
+        }
+        .add-choice-row-middle {
+          input {
+            padding: 7px;
+            width: 250px;
+            border: 1px solid $dark-color;
+            color: $dark-color;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::placeholder {
+              color: $dark-color;
+            }
+          }
+        }
+        .add-choice-row-right {
+          display: flex;
+          align-items: center;
+          margin-left: 15px;
+          .add-choice-row-right-row {
+            &:last-child {
+              margin-left: 10px;
+              margin-top: -4px;
+              span {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          margin-left: 100px;
+          input {
+            cursor: pointer;
+            background-color: $dark-color;
+            border: 1px solid $dark-color;
+            max-height: 100%;
+            max-width: 100%;
+            padding: 10px;
+            width: 221.99px;
+            color: white;
+
+            &:hover {
+              color: #267fff;
+              border: 1px solid $dark-color;
+              background-color: $light-color;
+            }
+
+            &:active {
+              color: $light-color;
+              border: 1px solid $dark-color;
+              background-color: $dark-color;
             }
           }
         }
