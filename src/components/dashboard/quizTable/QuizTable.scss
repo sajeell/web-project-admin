@@ -1,0 +1,28 @@
+$light-color: #f2f6ff;
+$dark-color: #405e87;
+
+.quiz-table-wrapper {
+  margin-top: 50px;
+  table {
+    th,
+    td {
+      text-align: center;
+      border: 1px solid $dark-color;
+      padding: 20px;
+
+      &:last-child {
+        &:hover {
+          background-color: $dark-color;
+          color: $light-color;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        &:active {
+          color: $dark-color;
+          background-color: $light-color;
+        }
+      }
+    }
+  }
+}

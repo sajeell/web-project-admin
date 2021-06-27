@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useQuery, useMutation } from 'urql'
 
+import QuizTable from './quizTable/QuizTable'
+
 import './Dashboard.scss'
 
 export default function Dashboard() {
@@ -436,6 +438,8 @@ export default function Dashboard() {
           </div>
         }
       </div>
+
+      <QuizTable />
     </div>
   )
 }
