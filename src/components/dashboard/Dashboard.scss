@@ -92,6 +92,32 @@ $dark-color: #405e87;
             }
           }
         }
+
+        &:last-child {
+          margin-left: 100px;
+          input {
+            cursor: pointer;
+            background-color: $dark-color;
+            border: 1px solid $dark-color;
+            max-height: 100%;
+            max-width: 100%;
+            padding: 10px;
+            width: 221.99px;
+            color: white;
+
+            &:hover {
+              color: #267fff;
+              border: 1px solid $dark-color;
+              background-color: $light-color;
+            }
+
+            &:active {
+              color: $light-color;
+              border: 1px solid $dark-color;
+              background-color: $dark-color;
+            }
+          }
+        }
       }
     }
 
